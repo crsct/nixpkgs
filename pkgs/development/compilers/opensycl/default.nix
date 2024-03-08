@@ -20,8 +20,8 @@ stdenv.mkDerivation rec {
   version = "23.10.0";
 
   src = fetchFromGitHub {
-    owner = "OpenSYCL";
-    repo = "OpenSYCL";
+    owner = "AdaptiveCpp";
+    repo = "AdaptiveCpp";
     rev = "v${version}";
     sha256 = "sha256-14wmslj0vyp06rgwmyfrmkr6pj3lz43g5fxsgsmpcl8ipcvni88k";
   };
@@ -35,9 +35,9 @@ stdenv.mkDerivation rec {
     libxml2
     libffi
     boost
-    llvmPackages_15.openmp
-    llvmPackages_15.libclang.dev
-    llvmPackages_15.llvm
+    llvmPackages_17.openmp
+    llvmPackages_17.libclang.dev
+    llvmPackages_17.llvm
   ] ++ lib.optionals rocmSupport [
     rocmPackages.clr
     rocmPackages.rocm-runtime
